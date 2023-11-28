@@ -63,28 +63,28 @@ const items = [{
   image: './asset/img/items/biodance_skin.jpeg'
 }, {
   id: 10,
-  brand: "etude",
+  brand: "Etude",
   title: "Mood Matte Lipstick 3.5getud",
   category: "makeup",
   price: '26',
   image: './asset/img/items/etudehouse_lip.jpeg'
 }, {
   id: 11,
-  brand: "beautyofjoseon",
+  brand: "Beauty of Joseon",
   title: "Pine Grove Body Wash 400mL",
   category: "body",
   price: '25.5',
   image: './asset/img/items/beauty_of_joseon_body.jpeg'
 }, {
   id: 12,
-  brand: "goodal",
+  brand: "Goodal",
   title: "Green Tangerine Vita C Dark Spot Care Serum 50ml",
   category: "skincare",
   price: '36',
   image: './asset/img/items/goodal_vitam_C.jpeg'
 }, {
   id: 13,
-  brand: "roundlab",
+  brand: "Roundlab",
   title: "1025 Dokdo Cleanser 250 ml",
   category: "new",
   price: '21',
@@ -105,49 +105,49 @@ const items = [{
   image: './asset/img/items/cosrx_cleanser.jpeg'
 }, {
   id: 16,
-  brand: "roundlab",
+  brand: "Roundlab",
   title: "1025 Dokdo Cleanser 250 ml_new",
   category: "skincare",
   price: '20.8',
   image: './asset/img/items/roundlab_cleanser.jpeg'
 }, {
   id: 17,
-  brand: "etude",
+  brand: "Etude",
   title: "Curl Fix Mascara",
   category: "makeup",
   price: '16',
   image: './asset/img/items/biodance.jpeg'
 }, {
   id: 18,
-  brand: "beautyofjoseon",
+  brand: "Beauty of Joseon",
   title: "Revive Eye Cream Ginseng + Retinal 30mL",
   category: "skincare",
   price: '16.5',
   image: './asset/img/items/boj_eyecream.jpeg'
 }, {
   id: 19,
-  brand: "laneige",
+  brand: "Laneige",
   title: "Cream Skin 170mL Special Set (+50mL)",
   category: "best",
   price: '35.2',
   image: './asset/img/items/laneige_set.jpeg'
 }, {
   id: 20,
-  brand: "roundlab",
+  brand: "Roundlab",
   title: "Dokdo Ampoule 45g",
   category: "skincare",
   price: '22.99',
   image: './asset/img/items/roundlab_ampoule.jpeg'
 }, {
   id: 21,
-  brand: "somebymi",
+  brand: "Some by Mi",
   title: "AHA BHA PHA 30 Days Miracle Toner Special Set (150mL+30mL)",
   category: "skincare",
   price: '23.5',
   image: './asset/img/items/some_by_mi.jpeg'
 }, {
   id: 22,
-  brand: "etude",
+  brand: "Etude",
   title: "Play Color Eyes 9 Colors",
   category: "makeup",
   price: '24.9',
@@ -161,7 +161,7 @@ const items = [{
   image: './asset/img/items/torriden_cream.jpeg'
 }, {
   id: 24,
-  brand: "goodal",
+  brand: "Goodal",
   title: " Green Tangerine Vita C Dark Spot Care Pad 70P",
   category: "skincare",
   price: '26.5',
@@ -182,7 +182,7 @@ const items = [{
   image: './asset/img/items/boj_essence.jpeg'
 }, {
   id: 27,
-  brand: "mediheal",
+  brand: "Mediheal",
   title: "Paper Mulberry 4D White Mask Sheet 10P",
   category: "skincare",
   price: '46',
