@@ -23,19 +23,19 @@
   margin: 50px;
 }
 
-figure{
+.product-container figure{
   width: 100%;
 }
 
-figure img {
+.product-container figure img {
   width: 100%;
 }
 
-h2 {
+.product-container h2 {
   font-size: 1.8rem;
 }
 
-figcaption, h3, label {
+.product-container figcaption, .product-container h3, .product-container label {
   font-size: 2.5rem;
   margin: 10px 0;
 }
@@ -94,12 +94,6 @@ input[type='number'] {
   line-height: 25px;
   font-size: 0.9rem;
   margin-left: 10px;
-
-}
-
-@media only screen and (max-width: 1024px) {
-
-
 }
 
 
