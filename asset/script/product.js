@@ -1,4 +1,3 @@
-// La fonction pour afficher le contenu du produit sur la page product.html
 function displayProduct() {
   // Récupérer l'ID depuis l'URL
   const urlParams = new URLSearchParams(window.location.search);
@@ -22,16 +21,21 @@ function displayProduct() {
           <figcaption>${selectedItem.title}</figcaption>
           <h3 id="price">${selectedItem.price}€</h3>
           <div class="container">
-          <div class='number'>
-          <label for="nbProduct"><i class="fa-solid fa-bag-shopping"></i></label>
-          <input type="number" name="nbProduct" id="nbProduct" value="1">
+            <div class='number'>
+              <label for="nbProduct"><i class="fa-solid fa-bag-shopping"></i></label>
+              <input type="number" name="nbProduct" id="nbProduct" value="1">
+            </div>
+            <button class='card-btn'>ADD CARD </button>
           </div>
-          <button class='card-btn'>ADD CARD </button>
+          <div class="item-info">
+            <h4>Ingredients</h4>
+            <p class='ing'>${selectedItem.ingredients || 'Ingredients not available'}</p>
+            <h4>How to use</h4>
+            <p class='use'>${selectedItem.useInfo || 'Usage information not available'}</p>
           </div>
-        </div>
-      `;
+        </div>`;
     } else {
-      console.log('Produit non trouvé');
+      productContainer.innerHTML = "<h3>Product Not Found</h3>";
     }
   }
 }
