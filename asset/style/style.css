@@ -215,7 +215,82 @@ body {
     cursor: pointer;
   }
 
+  .input-container{
+    display: flex;
+  } 
+
+  input[type="range"] {
+    width: 100%;
+    position: absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    pointer-events: pointer;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    position: relative;
+    bottom: 10px;
+    z-index: 2;
+    pointer-events: all;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    background-color: #fff;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+  }
+
+  input[type="range"]::-ms-thumb {
+    pointer-events: all;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    background-color: #fff;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    pointer-events: all;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    background-color: #fff;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    pointer-events: none;
+    width: 10px;
+    height: 2px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    background-color: #fff;
+    border: 3px solid var(--primary-color);
+    border-radius: 10px;
+  }
+
+
   .range  {
+    margin-top: 20px;
     text-align: center;
     font-size: 0.9rem;
   }
@@ -225,9 +300,6 @@ body {
     letter-spacing: 4px
   }
 
-  input[type="range"] {
-    width: 100%;
-  }
 
   .filter h5{
     margin: 10px 0;
@@ -244,6 +316,8 @@ body {
     width: 20px;
     height: 20px;
     margin-right: 20px;
+    accent-color: var(--primary-color);
+    mix-blend-mode: multiply;
   }
 
 
@@ -270,6 +344,7 @@ body {
 
   article:hover {
     box-shadow: 0px 0px 8px -3px #00000058;
+    color: var(--black);
   }
 
   article div {
@@ -277,7 +352,7 @@ body {
     justify-content: space-between;
   }
 
-  article h2, article span {
+  article h2, article button {
     font-size: 1.3rem;
   }
 
@@ -290,11 +365,13 @@ body {
     font-size: 1.1rem;
   }
 
-  article span {
+  article button {
+    border: none;
+    background: transparent;
     cursor: pointer;
     transition: all 0.2s;
   }
-  article span:hover {
+  article button:hover {
     transform: scale(1.1)
   }
 

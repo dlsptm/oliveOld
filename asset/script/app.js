@@ -1,10 +1,27 @@
-const items = [{
+const items = [
+  {
+    id: 14,
+    brand: "Torriden",
+    title: "Solid In Ceramide Lip Essence 11mL",
+    category: "makeup",
+    price: '10',
+    image: './asset/img/items/torriden_lip_essence.jpeg'
+  },
+  {
+    id: 18,
+    brand: "Beauty of Joseon",
+    title: "Revive Eye Cream Ginseng + Retinal 30mL",
+    category: "skincare",
+    price: '16.5',
+    image: './asset/img/items/boj_eyecream.jpeg'
+  }, 
+  {
   id: 1,
   brand: "Anua",
   title: "Heartleaf Pore Control Cleansing Oil 350mL",
   category: "skincare",
-  price: '35.5',
-  image: './asset/img/items/product_anua.jpeg'
+  price: '15.5',
+  image: './asset/img/items/product_Anua.jpeg'
 }, {
   id: 2,
   brand: "Biodance",
@@ -24,7 +41,7 @@ const items = [{
   brand: "Cosrx",
   title: "Advanced Snail Radiance Dual Essence 80mL",
   category: "skincare",
-  price: '25.45',
+  price: '23.45',
   image: './asset/img/items/product_cosrx.jpeg'
 }, {
   id: 5,
@@ -38,15 +55,15 @@ const items = [{
   brand: "Anua",
   title: "Heartleaf 77% Soothing Toner 350ml",
   category: "skincare",
-  price: '29.9',
-  image: './asset/img/items/product_anua_2.jpeg'
+  price: '19.9',
+  image: './asset/img/items/product_Anua_2.jpeg'
 }, {
   id: 7,
   brand: "Anua",
   title: "Set bestseller Anua Toner+Lotion",
   category: "best",
   price: '48.75',
-  image: './asset/img/items/best_set_anua.jpeg'
+  image: './asset/img/items/best_set_Anua.jpeg'
 }, {
   id: 8,
   brand: "Cosrx",
@@ -85,24 +102,17 @@ const items = [{
 }, {
   id: 13,
   brand: "Roundlab",
-  title: "1025 Dokdo Cleanser 250 ml",
+  title: "1025 Dokdo Sun Cream 50mL",
   category: "new",
-  price: '21',
-  image: './asset/img/items/roundlab_cleanser.jpeg'
-}, {
-  id: 14,
-  brand: "Torriden",
-  title: "Solid In Ceramide Lip Essence 11mL",
-  category: "makeup",
-  price: '10',
-  image: './asset/img/items/torriden_lip_essence.jpeg'
+  price: '11.4',
+  image: './asset/img/items/roundlab_sunscreen.jpeg'
 }, {
   id: 15,
   brand: "Cosrx",
-  title: "Low pH Good Morning Gel Cleanser 150ml",
+  title: "Propolis Light Ampule 40ml",
   category: "skincare",
-  price: '11',
-  image: './asset/img/items/cosrx_cleanser.jpeg'
+  price: '21',
+  image: './asset/img/items/cosrx_ampoule.jpeg'
 }, {
   id: 16,
   brand: "Roundlab",
@@ -117,13 +127,6 @@ const items = [{
   category: "makeup",
   price: '16',
   image: './asset/img/items/biodance.jpeg'
-}, {
-  id: 18,
-  brand: "Beauty of Joseon",
-  title: "Revive Eye Cream Ginseng + Retinal 30mL",
-  category: "skincare",
-  price: '16.5',
-  image: './asset/img/items/boj_eyecream.jpeg'
 }, {
   id: 19,
   brand: "Laneige",
@@ -175,7 +178,7 @@ const items = [{
   image: './asset/img/items/laneige_brush.jpeg'
 }, {
   id: 26,
-  brand: "beautyofjoseon",
+  brand: "Beauty of Joseon",
   title: "Ginseng Essence Water 150mL",
   category: "skincare",
   price: '16',
@@ -193,7 +196,7 @@ const items = [{
   title: "Heartleaft 70% Daily Lotion 200mL",
   category: "skincare",
   price: '28.9',
-  image: './asset/img/items/anua_lotion.jpeg'
+  image: './asset/img/items/Anua_lotion.jpeg'
 }, {
   id: 29,
   brand: "Etude",
@@ -204,25 +207,146 @@ const items = [{
 }, {
   id: 30,
   brand: "Biodance",
-  title: "Dive In Serum 70mL Large Size Special Set (+Serum 10mL)",
-  category: "skincare",
+  title: "Bio Collagen Real Deep Mask Sheet 7P",
+  category: "masks",
   price: '42.5',
-  image: './asset/img/items/torriden_serum.jpeg'
+  image: './asset/img/items/biodance_masks.jpeg'
 }]
 
-const cardsContainer = document.querySelector('.cards-container')
-
+/* ARTICLES INDEX.HTML */
+let cardsContainer = document.querySelector('.cards-container')
 items.forEach(item => {
   cardsContainer.innerHTML += `
+  <a href="./product.html?id=${item.id}">
   <article>
     <figure>
       <img src="${item.image}" alt="${item.title}">
     </figure>
     <div>
     <h2>${item.brand}</h2>
-    <span><i class="fa-solid fa-cart-shopping"></i></span>
+    <button data-id="${item.id}"><i class="fa-solid fa-cart-shopping"></i></button>
     </div>
     <figcaption>${item.title}</figcaption>
     <h3 id="price">${item.price}€</h3>
-  </article>`
+  </article>
+  </a>`
 })
+
+// Gestion des clics sur les cartes pour rediriger vers la page product.html
+cardsContainer.addEventListener('click', event => {
+  const targetButton = event.target.closest('button[data-id]');
+
+  if (targetButton) {
+    const productId = targetButton.getAttribute('data-id');
+    if (productId) {
+      window.location.href = `./product.html?id=${productId}`;
+    }
+  }
+});
+
+/*********************************  FILTRE *********************************/
+
+// Fonction pour afficher les produits filtrés dans l'interface utilisateur
+function displayFilteredProducts(products) {
+  // Effacer le contenu actuel de la section cardsContainer
+  cardsContainer.innerHTML = '';
+
+  // Afficher les produits filtrés
+  products.forEach(item => {
+    cardsContainer.innerHTML += `
+      <a href="./product.html?id=${item.id}">
+        <article>
+          <figure>
+            <img src="${item.image}" alt="${item.title}">
+          </figure>
+          <div>
+            <h2>${item.brand}</h2>
+            <button data-id="${item.id}"><i class="fa-solid fa-cart-shopping"></i></button>
+          </div>
+          <figcaption>${item.title}</figcaption>
+          <h3 id="price">${item.price}€</h3>
+        </article>
+      </a>`;
+  });
+
+  // Gestion des clics sur les cartes pour rediriger vers la page product.html
+  cardsContainer.addEventListener('click', event => {
+    const targetButton = event.target.closest('button[data-id]');
+
+    if (targetButton) {
+      const productId = targetButton.getAttribute('data-id');
+      if (productId) {
+        window.location.href = `./product.html?id=${productId}`;
+      }
+    }
+  });
+}
+
+//********** PRICE FILTER
+const leftRangeInput = document.getElementById('priceRange_left');
+const rightRangeInput = document.getElementById('priceRange_right');
+const minPrice = document.querySelector('.min-price')
+const maxPrice = document.querySelector('.max-price')
+
+
+function filterProductsByPrice(minPrice, maxPrice) {
+  return items.filter(item => {
+    const itemPrice = parseFloat(item.price);
+    return itemPrice >= minPrice && itemPrice <= maxPrice;
+  });
+}
+
+function updateRangeValue(event) {
+  const target = event.target;
+
+  // Limiter les inputs : 0 & 25, 25 et 0
+  if (parseInt(leftRangeInput.value) > rightRangeInput.value) {
+    leftRangeInput.value = rightRangeInput.value;
+  }
+  
+  minPrice.textContent = leftRangeInput.value;
+  maxPrice.textContent = rightRangeInput.value;
+
+  // Filtrer les produits avec les valeurs actuelles des plages de prix
+  const filteredProducts = filterProductsByPrice(
+    parseFloat(leftRangeInput.value),
+    parseFloat(rightRangeInput.value)
+  );
+
+  // Mettre à jour l'affichage des produits filtrés
+  displayFilteredProducts(filteredProducts);
+}
+
+leftRangeInput.addEventListener('input', updateRangeValue);
+rightRangeInput.addEventListener('input', updateRangeValue);
+
+
+//********** BRAND FILTER
+const brandsFilter = document.querySelectorAll('input[type="checkbox"]');
+
+function updateBrand() {
+  const selectedBrands = Array.from(brandsFilter)
+    .filter(checkbox => checkbox.checked)
+    .map(checkbox => checkbox.value);
+
+
+  if (selectedBrands.length === 0) {
+    // Si aucune marque n'est sélectionnée, afficher tous les produits
+    displayFilteredProducts(items);
+    return;
+  }
+
+  // Filtrer les produits par marques sélectionnées
+  const filteredProductsByBrand = items.filter(item => {
+    return selectedBrands.includes(item.brand);
+  });
+
+
+  // Afficher les produits filtrés par marque
+  displayFilteredProducts(filteredProductsByBrand);
+}
+
+brandsFilter.forEach(checkbox => {
+  checkbox.addEventListener('change', updateBrand);
+});
+

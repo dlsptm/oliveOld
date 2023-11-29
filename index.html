@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./asset/img/Group 48.png">
-  <title>Olive Young</title>
+  <title>Olive Old</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -14,12 +14,14 @@
   <link rel="stylesheet" href="./asset/style/style.css">
 
   <script src="./asset/script/app.js" defer></script>
+  <script src="./asset/script/product.js" defer></script>
+
   
 </head>
 <body>
     <nav class="burger-nav">
       <span class="toggle-btn"><i class="fa-solid fa-bars"></i></span>
-      <img src="./asset/img/logo.png" alt="logo Olive Old">
+      <a href="./index.html"><img src="./asset/img/logo.png" alt="logo Olive Old"></a>
       <div class="search-bar">
         <input type="search" name="searchBar" id="searchBar">
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -61,7 +63,7 @@
       <h3>Illimited edition</h3>
     </div>
     </header>
-
+    
   <main>
     <aside>
       <div class="clearAll">
@@ -69,54 +71,57 @@
         <p class="clear">Clear all</p>
       </div>
       <div class="price-range">
-        <input type="range" name="priceRange" id="priceRange" mix="10" max="150" value="10">
-        <p class="range"><span class="min-price">10</span>€ ~ <span class="max-price">150</span>€</p>
+        <div class="input-container">
+          <input type="range" name="priceRange" id="priceRange_left" min="10" max="50" value="10">
+          <input type="range" name="priceRange" id="priceRange_right" min="10" max="50" value="50">
+        </div>
+        <p class="range"><span class="min-price">10</span>€ ~ <span class="max-price">50</span>€</p>
       </div>
       <div class="filter">
         <h5>Brands</h5>
         <div>
-          <input type="checkbox" name="anua" id="anua">
+          <input type="checkbox" name="anua" id="anua" value="Anua">
         <label for="anua">Anua</label>
         </div>
         <div>
-          <input type="checkbox" name="biodance" id="biodance">
+          <input type="checkbox" name="biodance" id="biodance" value="Biodance">
         <label for="biodance">Biodance</label>
         </div>
         <div>
-          <input type="checkbox" name="medhiheal" id="medhiheal">
+          <input type="checkbox" name="medhiheal" id="medhiheal" value="Mediheal">
           <label for="medhiheal">Mediheal</label>
         </div>
         <div>
-          <input type="checkbox" name="cosrx" id="cosrx">
+          <input type="checkbox" name="cosrx" id="cosrx" value="Cosrx">
         <label for="cosrx">Cosrx</label>
       </div>
         <div>
-          <input type="checkbox" name="beautyofjoseon" id="beautyofjoseon">
+          <input type="checkbox" name="beautyofjoseon" id="beautyofjoseon" value="Beauty of Joseon">
         <label for="beautyofjoseon">Beauty of Joseon</label>
       </div>
       <div>
-        <input type="checkbox" name="etude" id="etude">
-        <label for="etude">Etude</label>
+        <input type="checkbox" name="etude" id="etude" value="Etude">
+        <label for="Etude">Etude</label>
       </div>
         <div>
-          <input type="checkbox" name="goodal" id="goodal">
+          <input type="checkbox" name="goodal" id="goodal" value="Goodal">
         <label for="goodal">Goodal</label>
       </div>
         <div>
-          <input type="checkbox" name="torriden" id="torriden">
+          <input type="checkbox" name="torriden" id="torriden" value="Torriden">
         <label for="torriden">Torriden</label>
       </div>
         <div>
-          <input type="checkbox" name="somebymi" id="somebymi">
+          <input type="checkbox" name="somebymi" id="somebymi" value="Some by Mi">
         <label for="somebymi">Some By Mi</label>
       </div>
         <div>
-          <input type="checkbox" name="laneige" id="laneige">
+          <input type="checkbox" name="laneige" id="laneige" value="Laneige">
         <label for="laneige">Laneige</label>
       </div>
         <div>
-          <input type="checkbox" name="roundlab" id="roundlab">
-        <label for="roundlab">Round Lab</label>
+          <input type="checkbox" name="roundlab" id="roundlab" value="Roundlab">
+        <label for="roundlab">Roundlab</label>
       </div>
       </div>
     </aside>
