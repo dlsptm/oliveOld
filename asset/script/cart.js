@@ -1,4 +1,4 @@
-function displayProduct() {
+function productListCart() {
   // Récupérer l'ID depuis l'URL
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get('id');
@@ -9,10 +9,10 @@ function displayProduct() {
 
     if (selectedItem) {
       // Sélectionner le conteneur où afficher les détails du produit
-      const productContainer = document.querySelector('.product-container');
+      const cartContainer = document.querySelector('.cart-container');
 
       // Affichage des détails du produit sur la page product.html
-      productContainer.innerHTML = `
+      cartContainer.innerHTML = `
         <figure>
           <img src="${selectedItem.image}" alt="${selectedItem.title}">
         </figure>
@@ -27,13 +27,8 @@ function displayProduct() {
             </div>
             <button class='cart-btn'>ADD CART </button>
           </div>
-          <div class="item-info">
-            <h4>Ingredients</h4>
-            <p class='ing'>${selectedItem.ingredients || 'Ingredients not available'}</p>
-            <h4>How to use</h4>
-            <p class='use'>${selectedItem.useInfo || 'Usage information not available'}</p>
-          </div>
-        </div>`;
+        </div>
+        `;
     } else {
       productContainer.innerHTML = "<h3>Product Not Found</h3>";
     }
@@ -41,4 +36,4 @@ function displayProduct() {
 }
 
 // Appeler la fonction pour afficher le produit
-displayProduct();
+productListCart();

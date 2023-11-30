@@ -244,6 +244,14 @@ body {
     background-color: #fff;
     border: 3px solid var(--primary-color);
     border-radius: 50%;
+    cursor: grab;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    background: var(--primary-color);
+  }
+  input[type="range"]::-webkit-slider-thumb:active {
+    cursor: grabbing;
   }
 
   input[type="range"]::-ms-thumb {
@@ -258,7 +266,6 @@ body {
     background-color: #fff;
     border: 3px solid var(--primary-color);
     border-radius: 50%;
-
   }
 
   input[type="range"]::-moz-range-thumb {
@@ -273,6 +280,7 @@ body {
     background-color: #fff;
     border: 3px solid var(--primary-color);
     border-radius: 50%;
+    cursor: grabbing;
   }
 
   input[type="range"]::-webkit-slider-runnable-track {
@@ -343,8 +351,9 @@ body {
   }
 
   article:hover {
-    box-shadow: 0px 0px 8px -3px #00000058;
-    color: var(--black);
+    box-shadow:  9px 9px 11px #d1d1d1,
+    -9px -9px 11px #ffffff;
+        color: var(--black);
   }
 
   article div {
