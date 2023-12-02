@@ -67,8 +67,16 @@ function displayCart() {
 
   if(totalPrice >= toFreeShipping) {
     shippingFee = 0
-  } 
-  TotalPrice.innerText = total
+    total =  totalPrice - shippingFee;
+    TotalPrice.innerText = total
+  } else {
+    shippingFee = 4.5
+    TotalPrice.innerText = total
+     if (cart.length === 0) {
+      TotalPrice.innerText = 0
+     }
+  }
+
   shippingFeeDisplay.innerText = shippingFee
 
 
