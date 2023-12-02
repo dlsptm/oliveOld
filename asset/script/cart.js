@@ -12,6 +12,8 @@ function displayCart() {
 
   // Supprimez tous les éléments enfants du conteneur
   cartContent.innerHTML = '';
+  let totalPrice = 0;
+  let shippingFee = 4.5;
 
   // Vérifiez si le panier est vide
   if (cart.length === 0) {
@@ -21,6 +23,8 @@ function displayCart() {
     cart.forEach(cartItem => {
       const selectedItem = items.find(item => item.id === cartItem.id);
       const priceByQuantity = selectedItem.price * cartItem.quantity;
+      totalPrice += priceByQuantity;
+
       
       
       if (selectedItem) {
@@ -52,6 +56,25 @@ function displayCart() {
       }
     });
   }
+
+  const totalElement = document.querySelector('.subtotal-display');
+  const shippingFeeDisplay = document.querySelector('.shipping-fee-display');
+  const TotalPrice = document.querySelector('.total-fee');
+  const toFreeShipping = 60;
+
+  totalElement.innerText = `${totalPrice}`;
+  let total =  totalPrice + shippingFee;
+
+  if(totalPrice >= toFreeShipping) {
+    shippingFee = 0
+    TotalPrice.innerText = total
+  } 
+
+  shippingFeeDisplay.innerText = shippingFee
+
+
+
+
 }
 
 

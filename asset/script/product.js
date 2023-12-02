@@ -2,7 +2,6 @@ function displayProduct() {
   // Récupérer l'ID depuis l'URL
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get('id');
-  const quantityId = urlParams.get('quantity');
 
   // Vérifier si l'ID est valide
   if (productId) {
@@ -46,8 +45,9 @@ displayProduct();
 // Sélectionnez le bouton du panier
 
 function addToCart(productId) {
-  // Récupérez le bouton du panier
+  // Récupérez le bouton du panier et le nombre de produits
   const cartBtn = document.querySelector('.cart-btn');
+  const nbProductInput = document.getElementById('nbProduct');
 
   // Récupérez les produits actuels dans le panier depuis le localStorage
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -55,13 +55,16 @@ function addToCart(productId) {
   // Recherchez le produit dans le panier existant
   const existingProductIndex = cart.findIndex(item => item.id === productId);
 
+  // Obtenez la quantité à partir de nbProductInput, assurez-vous de convertir la valeur en entier
+  const quantity = parseInt(nbProductInput.value, 10);
+
   // Mettez à jour le panier en conséquence
   if (existingProductIndex !== -1) {
-    // Si le produit est déjà dans le panier, augmentez la quantité
-    cart[existingProductIndex].quantity += 1;
+    // Si le produit est déjà dans le panier, mettez à jour la quantité
+    cart[existingProductIndex].quantity += quantity;
   } else {
-    // Sinon, ajoutez le nouveau produit au panier avec une quantité de 1
-    cart.push({ id: productId, quantity: 1 });
+    // Sinon, ajoutez le nouveau produit au panier avec la quantité spécifiée
+    cart.push({ id: productId, quantity: quantity });
   }
 
   // Enregistrez le panier mis à jour dans le localStorage
