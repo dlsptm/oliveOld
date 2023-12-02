@@ -28,7 +28,7 @@ const items = [
   category: "skincare",
   price: '15.5',
   quantity: 1,
-  image: './asset/img/items/product_Anua.jpeg',
+  image: './asset/img/items/product_anua.jpeg',
   ingredients: 'Ethylhexyl Palmitate, Sorbeth-30 Tetraoleate, Sorbitan Sesquioleate, Caprylic/Capric Triglyceride, Butyl Avocadate, Fragrance, Helianthus Annuus (Sunflower) Seed Oil, Macadamia Ternifolia Seed Oil, Olea Europaea (Olive) Fruit Oil, Simmondsia Chinensis (Jojoba) Seed Oil, Vitis Vinifera (Grape) Seed Oil, Caprylyl Glycol, Ethylhexylglycerin, Curcuma Longa (Turmeric) Root Extract, Melia Azadirachta Flower Extract, Tocopherol, Melia Azadirachta Leaf Extract, Houttuynia Cordata Extract, Corallina Officinalis Extract, Melia Azadirachta Bark Extract, Moringa Oleifera Seed Oil, Ocimum Sanctum Leaf Extract',
   useInfo: 'Squirt an appropriate amount in your dry hand and massage over your face in gentle rolling motions. Rinse thoroughly with lukewarm water.'
 }, {
@@ -110,7 +110,7 @@ const items = [
   category: "skincare",
   price: '19.9',
   quantity: 1,
-  image: './asset/img/items/product_Anua_2.jpeg',
+  image: './asset/img/items/product_anua_2.jpeg',
   ingredients: 'Houttuynia Cordata Extract, Water, 1,2-Hexanediol, Glycerin, Betaine, Centella Asiatica Extract, Vitex Agnus-Castus Extract, Arctium Lappa Root Extract, Phellinus Linteus Extract, Portulaca Oleracea Extract, Grape Fruit Extract, Malus Domestica Fruit Extract, Saccharum Officinarum (Sugarcane) Extract, Panthenol, Matricaria Flower Extract, Sodium Hyaluronate, Hydroxypropyltrimonium Hyaluronate, Hydrolyzed Hyaluronic Acid, Sodium Acetylated Hyaluronate, Hyaluronic Acid, Sodium Hyaluronate Crosspolymer, Potassium Hyaluronate, Methylpropanediol, Butylene Glycol, Isopentyldiol, Acrylate/C10-30 Alkyl Acrylate Crosspolymer, Tromethamine, Disodium EDTA',
   useInfo: 'After cleansing, lightly pat a small amount into skin until absorbed.',
 }, {
@@ -120,7 +120,7 @@ const items = [
   category: "best",
   price: '48.75',
   quantity: 1,
-  image: './asset/img/items/best_set_Anua.jpeg',
+  image: './asset/img/items/best_set_anua.jpeg',
   ingredients: 'Houttuynia Cordata Extract ( 77% ), Water, 1,2-Hexanediol, Glycerine, Betaine, Centella Asiatica Extract, Vitex Agnus-Castus Extract Arctium Lappa Root Extract, Phellinus Linteus Extract, Portulaca Oleracea Extract, Vitis Vinifera (Grape) Fruit Extract, Malus Domestica Fruit Extract, Saccharum Officinarum (Sugarcane) Extract, Panthenol, Chamomilla Recutita (Matricaria) Flower Extract, Sodium Hyaluronate, Hydroxypropyltrimonium Hyaluronate, Hydrolyzed Hyaluronic Acid, Sodium Acetylated Hyaluronate, Hyaluronic Acid, Sodium Hyaluronate Crosspolymer, Potassium Hyaluronate, Methylpropanediol, Butylene Glycol, Isopentyldiol Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Tromethamine, Disodium EDTA, Houttuynia Cordata Extract,Glycerine,Caprylic/Capric Triglyceride,Cetearyl Alcohol,Butylene Glycol,1,2-Hexanediol,Vegetable Squalane,Laminaria Japonica Extract,Eclipta Prostrata Leaf Extract,Centella Asiatica Extract,Ficus Carica (Fig) Fruit Extract,Ulmus Davidiana Root Extract,Amaranthus Caudatus Seed Extract,Hydrogenated Lecithin,Sodium Hyaluronate,Glyceryl Stearate,Cetearyl Glucoside,Water,Sodium Stearoyl Glutamate,Carbomer,Shea Butter,Arginine,Fructooligosaccharides,Beta-Glucan,Glucose,Hydrolyzed Hyaluronic Acid,Ceramide NP,Sodium Acetylated Hyaluronate,Ethylhexylglycerin',
   useInfo: 'After cleansing, take a moderate amount and tap it on skin for absorption. At the last stage of your daily skincare routine, evenly apply an adequate amount onto the skin for absorption.',
 }, {
@@ -314,7 +314,7 @@ const items = [
   category: "skincare",
   price: '28.9',
   quantity: 1,
-  image: './asset/img/items/Anua_lotion.jpeg',
+  image: './asset/img/items/anua_lotion.jpeg',
   ingredients: '	Houttuynia Cordata Extract (70%), Glycerin, 1,2-Hexanediol, Methyl Trimethicone, Ethylhexyl Stearate, Butylene Glycol, Hydrogenated Poly(C6-14 Olefin), Polyglyceryl-3 Distearate, Fraxinus Rhynchophylla Extract, Ocimum Basilicum (Basil) Flower/Leaf/Stem Extract, Ulmus Davidiana Root Extract, Amaranthus Caudatus Seed Extract, Hydrogenated Lecithin, Sodium Hyaluronate, Glyceryl Glucoside, Water, Glyceryl Stearate, Trehalose, Arginine, Carbomer, Glyceryl Stearate Citrate, Sodium Stearoyl Glutamate, Glucose, Disodium EDTA, Betaine, Hydrolyzed Hyaluronic Acid, Sodium Acetylated Hyaluronate, Ethylhexylglycerin',
   useInfo: '	At the last stage of your daily skincare routine, evenly apply an adequate amount onto the skin for absorption',
 }, {
