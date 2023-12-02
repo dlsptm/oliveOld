@@ -1,39 +1,70 @@
-function productListCart() {
-  // Récupérer l'ID depuis l'URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const productId = urlParams.get('id');
+document.addEventListener('DOMContentLoaded', function () {
+  displayCart();
+});
 
-  // Vérifier si l'ID est valide
-  if (productId) {
-    const selectedItem = items.find(item => item.id === parseInt(productId, 10));
 
-    if (selectedItem) {
-      // Sélectionner le conteneur où afficher les détails du produit
-      const cartContainer = document.querySelector('.cart-container');
+function displayCart() {
+  // Récupérez le contenu du panier depuis le localStorage
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-      // Affichage des détails du produit sur la page product.html
-      cartContainer.innerHTML = `
-        <figure>
-          <img src="${selectedItem.image}" alt="${selectedItem.title}">
-        </figure>
-        <div class="product-info">
+  // Sélectionnez le conteneur où afficher le contenu du panier
+  const cartContent = document.querySelector('#cart-content');
+
+  // Supprimez tous les éléments enfants du conteneur
+  cartContent.innerHTML = '';
+
+  // Vérifiez si le panier est vide
+  if (cart.length === 0) {
+    cartContent.innerHTML = "<p class='empty'>Your cart is empty.</p>";
+  } else {
+    // Affichez le contenu du panier
+    cart.forEach(cartItem => {
+      const selectedItem = items.find(item => item.id === cartItem.id);
+      const priceByQuantity = selectedItem.price * cartItem.quantity;
+      
+      
+      if (selectedItem) {
+        const cartItemDiv = document.createElement('div');
+        cartItemDiv.className = 'cart-item';
+        cartItemDiv.innerHTML = `
+          <figure>
+            <img src="${selectedItem.image}" alt="${selectedItem.title}">
+          </figure>
           <h2>${selectedItem.brand}</h2>
-          <figcaption>${selectedItem.title}</figcaption>
-          <h3 id="price">${selectedItem.price}€</h3>
-          <div class="container">
-            <div class='number'>
-              <label for="nbProduct"><i class="fa-solid fa-bag-shopping"></i></label>
-              <input type="number" name="nbProduct" id="nbProduct" value="1" min="1" max="100">
-            </div>
-            <button class='cart-btn'>ADD CART </button>
+          <div class="item-infos">
+            <h3>${selectedItem.title}</h3>
+            <p>${selectedItem.price}€</p>
           </div>
-        </div>
+          <p>${cartItem.quantity}</p>
+          <p><span class="item-total-price">${priceByQuantity}</span>€</p>
+          <span class="removeItem"><i class="fa-solid fa-trash"></i></span>
         `;
-    } else {
-      productContainer.innerHTML = "<h3>Product Not Found</h3>";
-    }
+        cartContent.appendChild(cartItemDiv);
+
+        // Ajouter un gestionnaire d'événements à chaque bouton de suppression
+        const removeItemButton = cartItemDiv.querySelector('.removeItem');
+
+        removeItemButton.addEventListener('click', (function(itemId) {
+          return function() {
+            removeItemFromCart(itemId);
+          };
+        })(cartItem.id));
+      }
+    });
   }
 }
 
-// Appeler la fonction pour afficher le produit
-productListCart();
+
+function removeItemFromCart(itemId) {
+  // Récupérez le contenu actuel du panier depuis le localStorage
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+  // Filtrer les éléments du panier pour exclure l'élément avec l'ID spécifié
+  cart = cart.filter(item => item.id !== itemId);
+
+  // Mettez à jour le localStorage avec le nouveau contenu du panier
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Mettez à jour l'affichage du panier
+  displayCart();
+}

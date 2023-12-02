@@ -424,7 +424,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin: 25px;
   }
 
   .search-bar {
@@ -457,17 +456,13 @@ body {
     border: none;
     background: transparent;
     color: var(--black);
+    cursor: pointer;
   }
 
   .search-bar {
     border: none;
     padding: 0;
     width: 0;
-  }
-
-  .search-bar button{
-    border: none;
-    background: transparent;
   }
 
   .nav-links a{
@@ -494,19 +489,7 @@ body {
     font-weight: 500;
   }
   
-  .shopping{
-    display: none;
-  }
-  
-  input[type='search'] {
-    display: none;
-  }
-
-  .nav-links li{
-    display: none;
-  }
-
-  .hidden {
+  .shopping, .hidden, .nav-links li {
     display: none;
   }
 
@@ -526,7 +509,17 @@ body {
   }
 
   aside {
-    display: none;
+    z-index: -4;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s;
+  }
+
+  .slide {
+    z-index: 1;
+    opacity: 1;
+    height: 100%;
+    background: white;
   }
 
   .sliders {
@@ -587,6 +580,7 @@ body {
     gap: 10px;
     margin: 20px 15px;
   }
+
 
 
   article h2, article span {
