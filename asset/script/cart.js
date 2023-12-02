@@ -67,9 +67,8 @@ function displayCart() {
 
   if(totalPrice >= toFreeShipping) {
     shippingFee = 0
-    TotalPrice.innerText = total
   } 
-
+  TotalPrice.innerText = total
   shippingFeeDisplay.innerText = shippingFee
 
 
