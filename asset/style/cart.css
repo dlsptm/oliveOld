@@ -200,6 +200,10 @@
     font-size: 1rem;
   }
 
+  .order-summary {
+    margin: 20px 0;
+  }
+
   .order-summary p {
     font-size: 0.9rem;
   }
@@ -214,5 +218,11 @@
 
   .order-btn, .coupon-show button  {
     font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .coupon-show {
+    gap: 10px;
   }
 }

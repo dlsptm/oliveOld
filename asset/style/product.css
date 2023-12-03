@@ -131,11 +131,11 @@ input[type='number'] {
     font-size: 1.3rem;
   }
 
-  h2 {
+  .product-container h2 {
     font-size: 1.5rem;
   }
   
-  figcaption, h3, label {
+  .product-container figcaption, .product-container h3, .product-container label {
     font-size: 1.8rem;
     margin: 10px 0;
   }
@@ -147,4 +147,21 @@ input[type='number'] {
   
 
   
+}
+
+@media only screen and (max-width: 350px) {
+  .product-container {
+    width: 80%;
+  }
+  .product-info {
+    margin-left: 5px;
+    width: 100%;
+  }
+  .product-info figcaption, .price {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    width: 90%;
+  }
 }

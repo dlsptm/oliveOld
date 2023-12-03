@@ -544,6 +544,16 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
+  .burger-nav {
+    gap: 0;
+  }
+
+  .search-bar input {
+    display: none;
+  }
+  .burger-nav img{
+    margin: 0;
+  }
   .nav-links p{
     right: 30px
   }
@@ -552,6 +562,10 @@ body {
     background: url('../img/header_phone/dafb8a22-f6fb-4701-9217-74fbfda18cf2.jpeg') no-repeat center / cover;
     width: 100%;
     height: 50%;
+  }
+
+  .header-container {
+    padding: 50px 40px;
   }
 
   .header-container h2 {
@@ -600,5 +614,19 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: start;
+  }
+
+  @media only screen and (max-width: 350px) {
+    .burger-nav {
+      gap: 0;
+    }
+
+    .burger-nav img {
+      margin: 0 25px 0 10px;
+    }
+
+    .burger-nav i {
+      font-size: 1.2rem;
+    }
   }
 }
